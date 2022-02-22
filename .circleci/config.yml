@@ -25,7 +25,9 @@ jobs:
       - store_test_results:
           path: build/test-results
       - store_artifacts:
-          path: build
+          path: build/reports/tests/test/index.html
+      - store_artifacts:
+          path: build/reports/jacoco/test/html/com.wini.demo1/index.html
       - run:
           name: Send to CodeCov
           command: bash <(curl -s https://codecov.io/bash)
